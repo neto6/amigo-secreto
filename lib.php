@@ -222,3 +222,5 @@ class Grupo {
         $this -> db -> insert("UPDATE grupos SET sorteio_realizado = '1' WHERE id = '$this->id'");
     }
 }
+
+?>
