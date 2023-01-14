@@ -8,13 +8,15 @@ class DB {
     public $password;
     public $dbname;
     public $conn;
+    public $port;
 
     public function __construct() {
         $this->servername = getenv('MYSQLHOST');
         $this->username = getenv('MYSQLUSER');
         $this->password = getenv('MYSQLPASSWORD');
         $this->dbname = getenv('MYSQLDATABASE');
-        $this->conn = new mysqli($this->servername, $this->username, $this->password, $this->dbname);
+        $this->port = getenv('MYSQLPORT');
+        $this->conn = new mysqli($this->servername, $this->username, $this->password, $this->dbname, $this->port);
     }
 
     public function insert($sql) {
