@@ -10,10 +10,10 @@ class DB {
     public $conn;
 
     public function __construct() {
-        $this->servername = 'sql130.main-hosting.eu';
-        $this->username = 'u803593275_amigosecreto';
-        $this->password = getenv('dbpass');
-        $this->dbname = 'u803593275_amigosecreto';
+        $this->servername = getenv('MYSQLHOST');
+        $this->username = getenv('MYSQLUSER');
+        $this->password = getenv('MYSQLPASSWORD');
+        $this->dbname = getenv('MYSQLDATABASE');
         $this->conn = new mysqli($this->servername, $this->username, $this->password, $this->dbname);
     }
 
